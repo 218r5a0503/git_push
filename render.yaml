@@ -1,4 +1,3 @@
-# render.yaml
 services:
   - type: web
     name: assistive-living-app
@@ -6,10 +5,4 @@ services:
     plan: free
     buildCommand: |
       pip install -r requirements.txt
-    # This command MUST match your folder structure.
     startCommand: gunicorn Assistive_living.app:app
-    # The following two sections must be indented like this.
-    buildpacks:
-      - url: https://github.com/heroku/heroku-buildpack-apt
-    aptPackages:
-      - ffmpeg
