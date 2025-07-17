@@ -1,8 +1,16 @@
+# render.yaml
 services:
   - type: web
     name: assistive-living-app
     env: python
     plan: free
+    # This tells Render to run commands from inside this directory.
+    rootDir: Assistive_living
     buildCommand: |
       pip install -r requirements.txt
-    startCommand: gunicorn Assistive_living.app:app
+    # The start command is now simpler because of the rootDir setting.
+    startCommand: gunicorn app:app
+    buildpacks:
+      - url: https://github.com/heroku/heroku-buildpack-apt
+    aptPackages:
+      - ffmpeg
