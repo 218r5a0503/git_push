@@ -1,0 +1,6 @@
+# requirements.txt
+flask
+torch --extra-index-url https://download.pytorch.org/whl/cpu
+torchaudio --extra-index-url https://download.pytorch.org/whl/cpu
+pydub
+gunicorn
